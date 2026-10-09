@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#faf8f2">
+    <title>Project screenshot | Hsu Honey Kyaw</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="screenshot-page">
+    <a class="screenshot-back" href="project.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span>Back to projects</span></a>
+    <main class="screenshot-viewer" aria-live="polite">
+        <h1 id="screenshot-title">Project screenshot</h1>
+        <p class="screenshot-caption" id="screenshot-caption"></p>
+        <div class="screenshot-frame" id="screenshot-frame"></div>
+        <div class="screenshot-thumbnails" id="screenshot-thumbnails" aria-label="Choose a project screenshot"></div>
+        <p class="screenshot-note" id="screenshot-note"></p>
+    </main>
+    <script>
+        const screenshotGalleries = {
+            flexiwork: { name: "FlexiWork", note: "The job listings shown here are fictional sample data for the preview.", screenshots: [
+                { file: "flexiwork-home.png", label: "Homepage", alt: "FlexiWork homepage screenshot" },
+                { file: "flexiwork-about.png", label: "About", alt: "FlexiWork about page screenshot" },
+                { file: "flexiwork-login.png", label: "Sign in", alt: "FlexiWork sign-in page screenshot" },
+                { file: "flexiwork-contact.png", label: "Contact", alt: "FlexiWork contact page screenshot" }
+            ] },
+            foodfusion: { name: "FoodFusion", note: "Recipe results use fictional sample recipes for the preview.", screenshots: [
+                { file: "foodfusion-home.png", label: "Homepage", alt: "FoodFusion homepage screenshot" },
+                { file: "foodfusion-recipe-search.png", label: "Recipe search", alt: "FoodFusion recipe search page with category filters and recipe cards" },
+                { file: "foodfusion-search-results.png", label: "Search results", alt: "FoodFusion filtered chicken recipe search results" }
+            ] },
+            fitforge: { name: "FitForge", note: "The badminton tracker shows a fictional 45-minute sample session.", screenshots: [
+                { file: "fitforge-activities.png", label: "Activities", alt: "FitForge activities dashboard with running, cycling, weightlifting and badminton" },
+                { file: "fitforge-weightlifting.png", label: "Weightlifting", alt: "FitForge weightlifting tracker screen" },
+                { file: "fitforge-badminton.png", label: "Badminton tracker", alt: "FitForge badminton tracker showing a sample session and progress" }
+            ] },
+            "goffee-coffee": { name: "Goffee Coffee", screenshots: [
+                { file: "goffee-home.png", label: "Homepage", alt: "Goffee Coffee homepage screenshot" },
+                { file: "goffee-coffee-selection.png", label: "Coffee menu", alt: "Goffee Coffee selection page screenshot" },
+                { file: "goffee-brewing-equipment.png", label: "Equipment", alt: "Goffee Coffee brewing equipment page screenshot" },
+                { file: "goffee-special-offers.png", label: "Special offers", alt: "Goffee Coffee special offers page screenshot" }
+            ] },
+            "fitness-maniac": { name: "Fitness Maniac", note: "Design preview only. Open the Figma link on the Projects page to see the original design.", screenshots: [
+                { file: "fitness-maniac-preview.png", label: "Design preview", alt: "Fitness Maniac interface concept preview" }
+            ] }
+        };
+        const gallery = screenshotGalleries[new URLSearchParams(window.location.search).get("project")];
+        const title = document.getElementById("screenshot-title");
+        const frame = document.getElementById("screenshot-frame");
+        const note = document.getElementById("screenshot-note");
+        const caption = document.getElementById("screenshot-caption");
+        const thumbnails = document.getElementById("screenshot-thumbnails");
+        if (gallery) {
+            document.title = gallery.name + " screenshots | Hsu Honey Kyaw";
+            title.textContent = gallery.name + " screenshots";
+            const image = document.createElement("img");
+            image.alt = "";
+            frame.append(image);
+            const showScreenshot = (index) => {
+                const item = gallery.screenshots[index];
+                image.src = "assets/projects/screenshots/" + item.file;
+                image.alt = item.alt;
+                caption.textContent = item.label + " · " + (index + 1) + " of " + gallery.screenshots.length;
+                [...thumbnails.children].forEach((button, buttonIndex) => {
+                    button.setAttribute("aria-pressed", buttonIndex === index ? "true" : "false");
+                });
+            };
+            gallery.screenshots.forEach((item, index) => {
+                const button = document.createElement("button");
+                button.type = "button";
+                button.className = "screenshot-thumb";
+                button.textContent = item.label;
+                button.setAttribute("aria-pressed", "false");
+                button.addEventListener("click", () => showScreenshot(index));
+                thumbnails.append(button);
+            });
+            showScreenshot(0);
+            note.textContent = gallery.note || "";
+        } else {
+            title.textContent = "Screenshot not found";
+            title.classList.add("screenshot-page-error");
+            note.textContent = "Choose a project from the portfolio to view its screenshots.";
+        }
+    </script>
+</body>
+</html>

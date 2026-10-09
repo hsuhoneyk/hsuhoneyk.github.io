@@ -645,6 +645,17 @@ nav a.active {
     border-radius: 14px;
 }
 
+.project-screenshot-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.project-screenshot-link:focus-visible {
+    outline: 3px solid #638269;
+    outline-offset: -3px;
+}
+
 .p-preview img {
     width: 100%;
     height: 100%;
@@ -693,6 +704,27 @@ nav a.active {
     color: #778078;
 
     font-size: 14px;
+}
+
+.project-screenshot-action {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px !important;
+    padding: 8px 12px;
+    color: #49694f !important;
+    background: #eef3ed;
+    border-radius: 999px;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    text-decoration: none;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.project-screenshot-action:hover,
+.project-screenshot-action:focus-visible {
+    color: #fff !important;
+    background: #638269;
 }
 
 .project-content a {
@@ -1971,3 +2003,21 @@ footer {
 
 }
 
+
+
+/* Standalone project screenshot viewer */
+.screenshot-page { min-height: 100vh; padding: 28px clamp(18px, 5vw, 72px) 64px; background: #faf8f2; }
+.screenshot-back { display: inline-flex; align-items: center; gap: 10px; color: #49694f; font-size: 14px; font-weight: 700; text-decoration: none; }
+.screenshot-back:hover, .screenshot-back:focus-visible { color: #7a9e7e; }
+.screenshot-viewer { width: min(100%, 1120px); margin: 32px auto 0; text-align: center; }
+.screenshot-viewer h1 { margin: 0 0 22px; color: #2f3e34; font-family: "Playfair Display", serif; font-size: clamp(28px, 4vw, 42px); font-weight: 500; }
+.screenshot-frame { display: grid; min-height: 240px; place-items: center; padding: clamp(12px, 2.5vw, 28px); background: #fff; border: 1px solid #e5e9e1; border-radius: 20px; box-shadow: 0 14px 38px rgba(47, 62, 52, 0.08); }
+.screenshot-frame img { display: block; max-width: 100%; max-height: 78vh; object-fit: contain; border-radius: 10px; }
+.screenshot-note { margin: 15px 0 0; color: #778078; font-size: 13px; }
+.screenshot-page-error { color: #9b3d34; }
+
+.screenshot-caption { margin: 0 0 12px; color: #6f7c70; font-size: 13px; font-weight: 600; }
+.screenshot-thumbnails { display: flex; justify-content: center; flex-wrap: wrap; gap: 9px; margin: 16px auto 0; }
+.screenshot-thumb { padding: 8px 13px; border: 1px solid #dfe5dd; border-radius: 999px; color: #53655a; background: #fff; font: inherit; font-size: 12px; cursor: pointer; transition: color .2s ease, background .2s ease, border-color .2s ease; }
+.screenshot-thumb:hover, .screenshot-thumb:focus-visible, .screenshot-thumb[aria-pressed="true"] { color: #fff; background: #638269; border-color: #638269; }
+@media (max-width: 520px) { .screenshot-page { padding-top: 20px; } .screenshot-viewer { margin-top: 24px; } .screenshot-frame { min-height: 170px; border-radius: 14px; } .screenshot-thumbnails { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; padding: 0 0 5px; } .screenshot-thumb { flex: 0 0 auto; } }

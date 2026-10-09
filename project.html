@@ -16,8 +16,7 @@
         rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
 
@@ -84,7 +83,10 @@
             <article class="p-card" id="flexiwork">
 
                 <div class="p-preview">
-                    <img src="assets/projects/flexiwork.jpg" alt="Workspace image representing the FlexiWork job board">
+                    <a class="project-screenshot-link" href="project-screenshot.html?project=flexiwork" target="_blank"
+                        rel="noopener noreferrer" aria-label="Open full-size screenshot of the FlexiWork homepage"><img
+                            src="assets/projects/screenshots/flexiwork-home.png"
+                            alt="Screenshot of the FlexiWork homepage"></a>
                 </div>
 
                 <div class="p-number">01</div>
@@ -111,7 +113,12 @@
                     <span>MySQL</span>
                 </div>
 
-                <a href="https://github.com/hsuhoneyk/FlexiWork" class="project-link" target="_blank" rel="noopener noreferrer">
+                <a href="project-screenshot.html?project=flexiwork" class="project-screenshot-action">
+                    <i class="fa-regular fa-image" aria-hidden="true">
+                    </i> View project screenshot</a>
+
+                <a href="https://github.com/hsuhoneyk/FlexiWork" class="project-link" target="_blank"
+                    rel="noopener noreferrer">
                     View on GitHub
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -123,7 +130,10 @@
             <article class="p-card" id="foodfusion">
 
                 <div class="p-preview">
-                    <img src="assets/projects/foodfusion.jpg" alt="Cooking community image from FoodFusion">
+                    <a class="project-screenshot-link" href="project-screenshot.html?project=foodfusion" target="_blank"
+                        rel="noopener noreferrer" aria-label="Open full-size screenshot of the FoodFusion homepage"><img
+                            src="assets/projects/screenshots/foodfusion-home.png"
+                            alt="Screenshot of the FoodFusion homepage"></a>
                 </div>
 
                 <div class="p-number">02</div>
@@ -150,7 +160,11 @@
                     <span>MySQL</span>
                 </div>
 
-                <a href="https://github.com/hsuhoneyk/FoodFusion" class="project-link" target="_blank" rel="noopener noreferrer">
+                <a href="project-screenshot.html?project=foodfusion" class="project-screenshot-action"><i
+                        class="fa-regular fa-image" aria-hidden="true"></i> View project screenshot</a>
+
+                <a href="https://github.com/hsuhoneyk/FoodFusion" class="project-link" target="_blank"
+                    rel="noopener noreferrer">
                     View on GitHub
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -162,7 +176,11 @@
             <article class="p-card" id="goffee-coffee">
 
                 <div class="p-preview">
-                    <img src="assets/projects/goffee-coffee.jpg" alt="Coffee image from the Goffee Coffee website">
+                    <a class="project-screenshot-link" href="project-screenshot.html?project=goffee-coffee"
+                        target="_blank" rel="noopener noreferrer"
+                        aria-label="Open full-size screenshot of the Goffee Coffee homepage"><img
+                            src="assets/projects/screenshots/goffee-home.png"
+                            alt="Screenshot of the Goffee Coffee homepage"></a>
                 </div>
 
                 <div class="p-number">03</div>
@@ -188,7 +206,11 @@
                     <span>JavaScript</span>
                 </div>
 
-                <a href="https://github.com/hsuhoneyk/Goffee-Coffee" class="project-link" target="_blank" rel="noopener noreferrer">
+                <a href="project-screenshot.html?project=goffee-coffee" class="project-screenshot-action"><i
+                        class="fa-regular fa-image" aria-hidden="true"></i> View project screenshot</a>
+
+                <a href="https://github.com/hsuhoneyk/Goffee-Coffee" class="project-link" target="_blank"
+                    rel="noopener noreferrer">
                     View on GitHub
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -200,7 +222,10 @@
             <article class="p-card" id="fitforge">
 
                 <div class="p-preview p-preview-fitforge">
-                    <img src="assets/projects/fitforge.png" alt="FitForge app logo">
+                    <a class="project-screenshot-link" href="project-screenshot.html?project=fitforge" target="_blank"
+                        rel="noopener noreferrer" aria-label="Open full-size FitForge Android app screenshot"><img
+                            src="assets/projects/screenshots/fitforge-activities.png"
+                            alt="Screenshot of the FitForge activities dashboard"></a>
                 </div>
 
                 <div class="p-number">04</div>
@@ -226,7 +251,11 @@
                     <span>PHP</span>
                 </div>
 
-                <a href="https://github.com/hsuhoneyk/FitForge" class="project-link" target="_blank" rel="noopener noreferrer">
+                <a href="project-screenshot.html?project=fitforge" class="project-screenshot-action"><i
+                        class="fa-regular fa-image" aria-hidden="true"></i> View project screenshot</a>
+
+                <a href="https://github.com/hsuhoneyk/FitForge" class="project-link" target="_blank"
+                    rel="noopener noreferrer">
                     View on GitHub
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -237,12 +266,15 @@
             <!-- Fitness Maniac -->
             <article class="p-card" id="fitness-maniac">
 
-                <div class="p-preview p-preview-design" role="img" aria-label="Fitness Maniac user interface concept preview">
+                <div class="p-preview p-preview-design" role="img"
+                    aria-label="Fitness Maniac user interface concept preview">
                     <div class="design-preview" aria-hidden="true">
                         <span class="design-preview-label">FITNESS MANIAC</span>
                         <span class="design-preview-title">Train with a plan.</span>
-                        <span class="design-preview-card"><i class="fa-solid fa-dumbbell"></i> Personal training <b>↗</b></span>
-                        <span class="design-preview-card"><i class="fa-solid fa-bag-shopping"></i> Gear for your goals <b>↗</b></span>
+                        <span class="design-preview-card"><i class="fa-solid fa-dumbbell"></i> Personal training
+                            <b>↗</b></span>
+                        <span class="design-preview-card"><i class="fa-solid fa-bag-shopping"></i> Gear for your goals
+                            <b>↗</b></span>
                     </div>
                 </div>
 
@@ -269,7 +301,8 @@
                     <span>Wireframing</span>
                 </div>
 
-                <a href="https://www.figma.com/design/Ne1p5E4pze5QTLMcTqJKe6/Untitled?node-id=0-1&amp;p=f&amp;t=fhqhXMzimEsxUCpj-0" class="project-link" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.figma.com/design/Ne1p5E4pze5QTLMcTqJKe6/Untitled?node-id=0-1&amp;p=f&amp;t=fhqhXMzimEsxUCpj-0"
+                    class="project-link" target="_blank" rel="noopener noreferrer">
                     View Figma Design
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
@@ -316,15 +349,18 @@
             <!-- Social Media -->
             <div class="footer-social">
 
-                <a href="https://www.linkedin.com/in/hsu-honey-kyaw-a51a913b0" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/hsu-honey-kyaw-a51a913b0" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
 
-                <a href="https://www.facebook.com/share/19QXdpM22V/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <a href="https://www.facebook.com/share/19QXdpM22V/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Facebook">
                     <i class="fa-brands fa-facebook-f"></i>
                 </a>
 
-                <a href="https://www.instagram.com/v_for_vannie?vrfl=aWN2Z3E3OXZqZ3hl" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <a href="https://www.instagram.com/v_for_vannie?vrfl=aWN2Z3E3OXZqZ3hl" target="_blank"
+                    rel="noopener noreferrer" aria-label="Instagram">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
 
