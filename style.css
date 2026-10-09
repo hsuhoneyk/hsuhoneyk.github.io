@@ -77,6 +77,73 @@ a {
     color: #7a9e7e;
 }
 
+.mobile-navigation {
+    display: none;
+    position: relative;
+    z-index: 1001;
+}
+
+.mobile-navigation summary {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    color: #49694f;
+    background: #fbf8f2;
+    border: 1px solid #dfe5dd;
+    border-radius: 50%;
+    cursor: pointer;
+    list-style: none;
+}
+
+.mobile-navigation summary::-webkit-details-marker {
+    display: none;
+}
+
+.mobile-navigation summary:hover,
+.mobile-navigation[open] summary {
+    background: #eef3ed;
+    border-color: #a8c3a1;
+}
+
+.mobile-navigation nav {
+    display: none;
+}
+
+.mobile-navigation[open] nav {
+    position: absolute;
+    top: calc(100% + 14px);
+    right: 0;
+    display: flex;
+    width: 210px;
+    flex-direction: column;
+    gap: 3px;
+    padding: 10px;
+    background: #fffdf9;
+    border: 1px solid #e7ece7;
+    border-radius: 16px;
+    box-shadow: 0 16px 35px rgba(47, 62, 52, 0.12);
+}
+
+.mobile-navigation nav a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 9px;
+    font-size: 14px;
+}
+
+.mobile-navigation nav a:hover,
+.mobile-navigation nav a.active {
+    background: #eef3ed;
+}
+
+.mobile-navigation summary:focus-visible,
+.mobile-navigation nav a:focus-visible {
+    outline: 3px solid #7a9e7e;
+    outline-offset: 3px;
+}
+
 .nav-button {
     padding: 11px 20px;
 
@@ -247,7 +314,9 @@ nav a.active {
 
     border-radius: 50%;
 
-    background: #a8c3a1;
+    background: radial-gradient(circle at 30% 25%, #bfd4b7, #7a9e7e 72%);
+    border: 6px solid rgba(255, 255, 255, 0.55);
+    box-shadow: 0 12px 28px rgba(47, 62, 52, 0.12);
 
     display: flex;
     align-items: center;
@@ -255,7 +324,8 @@ nav a.active {
 
     font-family: "Playfair Display", serif;
 
-    font-size: 70px;
+    font-size: 50px;
+    letter-spacing: 2px;
 
     color: white;
 }
@@ -461,6 +531,8 @@ nav a.active {
 
 .project-image {
     height: 230px;
+    position: relative;
+    overflow: hidden;
 
     background: #dce8d9;
 
@@ -469,12 +541,132 @@ nav a.active {
     justify-content: center;
 }
 
-.project-image span {
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.045);
+}
+
+.project-image::after {
+    position: absolute;
+    inset: 35% 0 0;
+    content: "";
+    background: linear-gradient(transparent, rgba(28, 43, 33, 0.52));
+    pointer-events: none;
+}
+
+.project-image > .project-number {
+    position: absolute;
+    z-index: 1;
+    left: 18px;
+    bottom: 15px;
+    color: #fff;
     font-family: "Playfair Display", serif;
+    font-size: 27px;
+    line-height: 1;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+}
 
-    font-size: 70px;
+.project-image-fitforge {
+    background: #1e2b24;
+}
 
+.project-image-fitforge img {
+    object-fit: contain;
+    padding: 22px;
+}
+
+.project-image-fitness-maniac {
+    padding: 22px;
+    background: linear-gradient(135deg, #c4d8bb, #edf1e6 58%, #dce8d9);
+}
+
+.project-image-fitness-maniac::after {
+    display: none;
+}
+
+.design-preview {
+    display: flex;
+    width: 100%;
+    max-width: 365px;
+    flex-direction: column;
+    gap: 9px;
+    padding: 17px;
+    color: #2f3e34;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 17px;
+    box-shadow: 0 15px 32px rgba(47, 62, 52, 0.12);
+}
+
+.design-preview-label {
     color: #7a9e7e;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.design-preview-title {
+    margin: 1px 0 3px;
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+    line-height: 1.15;
+}
+
+.design-preview-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 9px;
+    background: #f3f6f2;
+    border-radius: 9px;
+    font-size: 10px;
+}
+
+.design-preview-card i {
+    color: #638269;
+}
+
+.design-preview-card b {
+    margin-left: auto;
+    color: #7a9e7e;
+}
+
+.p-preview {
+    height: 155px;
+    overflow: hidden;
+    margin-bottom: 23px;
+    background: #dce8d9;
+    border-radius: 14px;
+}
+
+.p-preview img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.p-preview-fitforge {
+    background: #1e2b24;
+}
+
+.p-preview-fitforge img {
+    object-fit: contain;
+    padding: 12px;
+}
+
+.p-preview-design {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px;
+    background: linear-gradient(135deg, #c4d8bb, #edf1e6 58%, #dce8d9);
 }
 
 .project-content {
@@ -583,8 +775,12 @@ footer a:hover {
 
 @media (max-width: 900px) {
 
-    .navbar nav {
+    .navbar > nav {
         display: none;
+    }
+
+    .mobile-navigation {
+        display: block;
     }
 
     .hero {
@@ -653,7 +849,7 @@ footer a:hover {
         width: 110px;
         height: 110px;
 
-        font-size: 50px;
+        font-size: 40px;
     }
 
     .floating-card {
@@ -1119,7 +1315,10 @@ a.project-link:hover {
 ================================ */
 
 .about-page {
-    padding: 80px 8% 100px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 0 100px;
 }
 
 
@@ -1128,13 +1327,16 @@ a.project-link:hover {
 ================================ */
 
 .about-hero {
-    max-width: 1200px;
-    margin: auto;
+    padding: clamp(32px, 6vw, 72px);
+    background: #eef3ed;
+    border: 1px solid #e3ebe1;
+    border-radius: 28px;
 }
 
 .about-heading {
-    max-width: 850px;
-    margin-bottom: 70px;
+    max-width: 900px;
+    margin: 0 auto 48px;
+    text-align: center;
 }
 
 .section-label {
@@ -1147,7 +1349,8 @@ a.project-link:hover {
 
 .about-heading h1 {
     color: #2F3E34;
-    font-size: 55px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 6vw, 68px);
     line-height: 1.15;
     font-weight: 500;
     margin: 0;
@@ -1164,16 +1367,29 @@ a.project-link:hover {
 
 .about-content {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 80px;
+    grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+    gap: clamp(32px, 6vw, 80px);
     align-items: start;
+    max-width: 1050px;
+    margin: 0 auto;
 }
 
 .about-text p {
     color: #5F6B63;
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 22px;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.about-text p:first-child {
+    color: #2f3e34;
+    font-family: "Playfair Display", serif;
+    font-size: 23px;
+    line-height: 1.55;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
 }
 
 
@@ -1184,20 +1400,21 @@ a.project-link:hover {
 .about-info {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 12px;
 }
 
 .info-card {
     background: #FFFFFF;
     border: 1px solid #E7ECE7;
-    border-radius: 18px;
-    padding: 25px;
-    transition: 0.3s ease;
+    border-radius: 16px;
+    padding: 21px 23px;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .info-card:hover {
-    transform: translateY(-4px);
+    transform: translateX(4px);
     border-color: #A8C3A1;
+    box-shadow: 0 10px 24px rgba(47, 62, 52, 0.06);
 }
 
 .info-card span {
@@ -1225,8 +1442,8 @@ a.project-link:hover {
 ================================ */
 
 .education-section {
-    max-width: 1200px;
-    margin: 120px auto 0;
+    max-width: 1000px;
+    margin: 100px auto 0;
 }
 
 .section-title {
@@ -1242,12 +1459,14 @@ a.project-link:hover {
 
 .education-card {
     display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 40px;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
     background: #FFFFFF;
     border: 1px solid #E7ECE7;
-    border-radius: 20px;
-    padding: 35px;
+    border-radius: 18px;
+    padding: 30px 32px;
+    margin-bottom: 14px;
+    box-shadow: 0 8px 24px rgba(47, 62, 52, 0.035);
 }
 
 .education-year span {
@@ -1275,11 +1494,12 @@ a.project-link:hover {
 ================================ */
 
 .about-goal {
-    max-width: 1200px;
-    margin: 120px auto 0;
-    padding: 60px;
+    max-width: 1000px;
+    margin: 90px auto 0;
+    padding: clamp(32px, 6vw, 60px);
     background: #EEF3ED;
-    border-radius: 25px;
+    border: 1px solid #e3ebe1;
+    border-radius: 24px;
 }
 
 .about-goal h2 {
@@ -1308,6 +1528,18 @@ a.project-link:hover {
 
 .about-button:hover {
     background: #2F3E34;
+}
+
+.about-button-secondary {
+    margin-left: 10px;
+    color: #49694f;
+    background: transparent;
+    border: 1px solid #a8b5a9;
+}
+
+.about-button-secondary:hover {
+    color: #fff;
+    border-color: #2f3e34;
 }
 
 
@@ -1424,7 +1656,7 @@ footer {
 
     .about-content {
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 30px;
     }
 
     .education-card {
@@ -1441,7 +1673,13 @@ footer {
 @media (max-width: 600px) {
 
     .about-page {
-        padding: 60px 6% 80px;
+        width: 88%;
+        padding: 42px 0 70px;
+    }
+
+    .about-hero {
+        padding: 30px 22px;
+        border-radius: 22px;
     }
 
     .about-heading {
@@ -1450,6 +1688,10 @@ footer {
 
     .about-heading h1 {
         font-size: 36px;
+    }
+
+    .about-text p:first-child {
+        font-size: 20px;
     }
 
     .section-title h2 {
@@ -1465,7 +1707,8 @@ footer {
     }
 
     .education-card {
-        padding: 25px;
+        padding: 23px;
+        gap: 8px;
     }
 }
 
