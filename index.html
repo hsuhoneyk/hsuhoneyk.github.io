@@ -57,6 +57,8 @@
 
             <div class="hero-content">
 
+                <p class="availability-pill"><span aria-hidden="true"></span> Open to internship opportunities</p>
+
                 <p class="small-title">HELLO, I'M</p>
 
                 <h1>
@@ -67,9 +69,8 @@
                 <h2>Junior Full Stack Web Developer</h2>
 
                 <p class="hero-text">
-                    I create clean and user-friendly websites
-                    with a focus on simple design and meaningful
-                    user experiences.
+                    I build thoughtful web and mobile experiences with a focus on
+                    clean interfaces, useful features, and accessible design.
                 </p>
 
                 <div class="hero-buttons">
@@ -81,32 +82,46 @@
                         Contact Me
                     </a>
 
+                    <a href="output/pdf/Hsu_Honey_Kyaw_Junior_Full_Stack_Developer_CV.pdf"
+                        class="cv-button" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-regular fa-file-lines" aria-hidden="true"></i> View CV
+                    </a>
+
                 </div>
 
             </div>
 
 
-            <!-- Decorative Profile Area -->
-            <div class="hero-visual">
+            <!-- 3D project showcase: real previews link to their screenshot galleries -->
+            <div class="hero-visual hero-showcase" role="group" aria-label="Featured portfolio project previews">
+                <div class="showcase-glow" aria-hidden="true"></div>
 
-                <div class="circle-bg"></div>
+                <a class="showcase-browser" href="project-screenshot.html?project=foodfusion"
+                    aria-label="View FoodFusion project screenshots">
+                    <span class="showcase-browser-bar">
+                        <span class="showcase-window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <span class="showcase-browser-title">FoodFusion <span>·</span> Recipe discovery</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    </span>
+                    <img src="assets/projects/screenshots/foodfusion-recipe-search.png"
+                        alt="FoodFusion recipe search interface project preview">
+                </a>
 
-                <div class="profile-card">
-                    <div class="profile-placeholder" role="img" aria-label="Hsu Honey Kyaw monogram">
-                        HK
-                    </div>
+                <a class="showcase-device" href="project-screenshot.html?project=fitforge"
+                    aria-label="View FitForge project screenshots">
+                    <img src="assets/projects/screenshots/fitforge-activities.png"
+                        alt="FitForge fitness activities dashboard project preview">
+                </a>
 
-                    <div class="profile-info">
-                        <span>Currently</span>
-                        <strong>Building & Learning</strong>
-                    </div>
+                <div class="showcase-chip showcase-chip-build">
+                    <i class="fa-solid fa-code" aria-hidden="true"></i>
+                    <span>Web development</span>
                 </div>
 
-                <div class="floating-card">
-                    <span>✦</span>
-                    <p>Creative<br>Developer</p>
+                <div class="showcase-chip showcase-chip-design">
+                    <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+                    <span>UI/UX design</span>
                 </div>
-
             </div>
 
         </section>
